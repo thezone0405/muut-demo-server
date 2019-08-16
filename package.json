@@ -4,9 +4,8 @@
   "description": "Server for demonstrating server side muut authentication",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js",
-    "start:stage": "node ./src/index",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run start:stage"
+    "start": "nodemon index.js",
+    "start:stage": "node index.js"
   },
   "author": "Edizon Layug",
   "license": "ISC",
