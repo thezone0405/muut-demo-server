@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.js",
-    "build": "babel -d ./build ./src -s",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build"
+    "start:stage": "node ./src/index",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run start:stage"
   },
   "author": "Edizon Layug",
   "license": "ISC",
@@ -16,13 +16,5 @@
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "nodemon": "^1.19.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1"
   }
 }
