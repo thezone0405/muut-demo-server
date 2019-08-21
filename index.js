@@ -2,6 +2,7 @@ var express = require('express'),
     app = express(),
     crypto = require('crypto'),
     axios = require('axios'),
+    cors = require('cors'),
     bodyParser = require('body-parser'),
     users = {
         "test1":{
@@ -34,6 +35,7 @@ var express = require('express'),
     var text = key + ":" + timestamp;
     var signature = crypto.createHmac('sha256', secretkey).update(text).digest('hex');
 
+    app.use(cors())
     app.use(bodyParser.json())
 
     app.post('/authenticate', function (req, res) {
