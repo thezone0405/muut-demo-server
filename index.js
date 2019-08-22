@@ -44,7 +44,7 @@ var express = require('express'),
 
         var currentUser = users[username]
         if(currentUser && password == currentUser.password){
-            delete currentUser.password
+            //delete currentUser.password
             axios.post('https://api.muut.io/v1/edztest/projects/edztesting/users/tokens',{
                     fi_user: currentUser,
                     sync: "true"
@@ -61,7 +61,7 @@ var express = require('express'),
                 res.status(200).send({token: token})
             })
             .catch(function (error) {
-                res.status(403).send({error});
+                res.status(403).send({message: 'Request Failed',error});
             })
         }else{
             res.status(403).send({error:"Authentication error"});
