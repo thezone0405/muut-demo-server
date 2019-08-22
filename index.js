@@ -61,7 +61,7 @@ var express = require('express'),
                 res.status(200).send({token: token})
             })
             .catch(function (error) {
-                res.status(403).send({error:"Authentication error"});
+                res.status(403).send({error});
             })
         }else{
             res.status(403).send({error:"Authentication error"});
