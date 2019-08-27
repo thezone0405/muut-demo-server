@@ -25,8 +25,8 @@ var express = require('express'),
         }
     },
     //Your API keys here
-    key = "IpiYhMG4R2xPGeLrDbKZjAL7k",
-    secretkey = "zzZXr_yVgH4iie1grCPbh0Vf5S_CKBDSua90wpUMHkA-9wYJ",
+    key = "ODHgFGOOTNfGJqj3TgHNZGaZj",
+    secretkey = "Qotn_-lrkEAyIE7xG8obEVRuvh3X2XeztYv8jTgE13MI7Jd4",
 
     // current timestamp
     timestamp = new Date()/1000; //epoch time in seconds
@@ -45,7 +45,7 @@ var express = require('express'),
         var currentUser = users[username]
         if(currentUser && password == currentUser.password){
             //delete currentUser.password
-            axios.post('https://api.muut.io/v1/edztest/projects/edztesting/users/tokens',{
+            axios.post('https://api.muut.io/v1/muutest/projects/muutesting/users/tokens',{
                     fi_user: currentUser,
                     sync: "true"
                 },
@@ -61,7 +61,7 @@ var express = require('express'),
                 res.status(200).send({token: token})
             })
             .catch(function (error) {
-                res.status(403).send({message: 'Request Failed',error});
+                res.status(403).send({message: 'Request Failed', error});
             })
         }else{
             res.status(403).send({error:"Authentication error"});
