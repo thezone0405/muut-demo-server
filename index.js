@@ -58,7 +58,10 @@ var express = require('express'),
                 }
             ).then(function (response) {
                 var token = response.data.jwt
-                res.status(200).send({token: token})
+                res.status(200).send({
+                    token: token,
+                    avatar: currentUser.avatar
+                })
             })
             .catch(function (error) {
                 res.status(403).send({message: 'Request Failed', error});
